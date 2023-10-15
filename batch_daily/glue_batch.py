@@ -5,9 +5,9 @@ from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
 from awsglue import DynamicFrame
-from datetime import date
+from datetime import date, timedelta
 
-#args = getResolvedOptions(sys.argv, ["JOB_NAME","TODAY"])
+#args = getResolvedOptions(sys.argv, ["JOB_NAME","FOLDER"])
 args = getResolvedOptions(sys.argv, ["JOB_NAME"])
 sc = SparkContext()
 glueContext = GlueContext(sc)
@@ -15,9 +15,9 @@ spark = glueContext.spark_session
 job = Job(glueContext)
 job.init(args["JOB_NAME"], args)
 
-#today = args["TODAY"]
-today = date.today()
-csvPath = "s3://aws-allen-demo-test/{today}/".format(today = today)
+#folder = args["FOLDER"]
+folder = date.today() - timedelta(days=1)
+csvPath = "s3://aws-allen-demo-test/{folder}/".format(folder = folder)
 redshiftConnection = "redshift"
 redshiftTmpDir = "s3://aws-glue-assets-435028209039-us-west-2/temporary/"
 redshiftDBTable = "public.demo01"
