@@ -1,6 +1,6 @@
 # Prerequisites
 
-### Create S3 VPC endpoints
+### Create S3 VPC Endpoints
 
 ### Create Redshift Connectors
 

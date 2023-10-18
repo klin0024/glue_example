@@ -12,9 +12,9 @@
 - Destination: `Lambda Function`
 - Choose a function
 
-### Create Kinesis-Streams VPC endpoints
+### Create Kinesis-Streams VPC Endpoints
 
-### Create S3 VPC endpoints
+### Create S3 VPC Endpoints
 
 ### Create Redshift Connectors
 
